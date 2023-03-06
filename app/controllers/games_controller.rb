@@ -3,6 +3,9 @@ require "open-uri"
 
 class GamesController < ApplicationController
   def new
+    if cookies[:score].nil?
+      cookies[:score] = 0
+    end
     @letters = []
     10.times do
       @letters << ('A'..'Z').to_a.sample
@@ -26,6 +29,10 @@ class GamesController < ApplicationController
       else
         @letters.delete_at(index)
       end
+    end
+
+    if @found && !@missing_letters
+      cookies[:score] = cookies[:score].to_i + @answer.length ** 2
     end
   end
 end
