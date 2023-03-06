@@ -10,7 +10,8 @@
 
 <br>
 
-Your score: <%= cookies[:score] %>
+Your score: <%= session[:score] %>
+<%= link_to 'Reset Score', '/reset_score' %>
 
 <br>
 

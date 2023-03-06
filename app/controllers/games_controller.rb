@@ -3,13 +3,16 @@ require "open-uri"
 
 class GamesController < ApplicationController
   def new
-    if cookies[:score].nil?
-      cookies[:score] = 0
-    end
+    session[:score] = 0 if session[:score].nil?
+
+    @score = session[:score]
     @letters = []
-    10.times do
-      @letters << ('A'..'Z').to_a.sample
-    end
+    10.times { @letters << ('A'..'Z').to_a.sample }
+  end
+
+  def reset_score
+    session[:score] = 0
+    redirect_to '/new'
   end
 
   def score
@@ -32,7 +35,7 @@ class GamesController < ApplicationController
     end
 
     if @found && !@missing_letters
-      cookies[:score] = cookies[:score].to_i + @answer.length ** 2
+      session[:score] = session[:score].to_i + @answer.length ** 2
     end
   end
 end

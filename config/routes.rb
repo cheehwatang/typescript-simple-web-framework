@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
   get 'games/new'
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
-  # root "articles#index"
   root to: 'games#new'
   get 'new', to: 'games#new'
+  get 'reset_score', to: 'games#reset_score'
   post 'score', to: 'games#score'
+  get 'score', to: 'games#new'
 end
