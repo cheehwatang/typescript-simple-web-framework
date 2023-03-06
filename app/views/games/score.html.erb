@@ -1,0 +1,13 @@
+<h1>Result</h1>
+
+<% if !@found %>
+  <%= "Sorry, but #{@answer} does not seem to be a valid English word..." %>
+<% elsif @missing_letters %>
+  <%= "Sorry, but #{@answer} can't be built out of #{@letters.join(',')}" %>
+<% else %>
+  <strong>Congratulations!</strong> <%= "#{@answer} is a valid English word!" %>
+<% end %>
+
+<br>
+
+<%= link_to 'Play Again!', '/new' %>
