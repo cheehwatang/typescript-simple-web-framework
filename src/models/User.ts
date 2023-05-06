@@ -6,6 +6,8 @@ interface UserProps {
 type Callback = () => void;
 
 class User {
+  events: { [key: string]: Callback[] } = {};
+
   constructor(private data: UserProps) {}
 
   get(propName: string): string | number {
@@ -16,7 +18,12 @@ class User {
     Object.assign(this.data, newProp);
   }
 
-  on(eventName: string, callback: Callback) {}
+  on(eventName: string, callback: Callback): void {
+    const handlers = this.events[eventName] || [];
+    handlers.push(callback);
+
+    this.events[eventName] = handlers;
+  }
 }
 
 export { User };
