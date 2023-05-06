@@ -12,7 +12,10 @@
 # /db/*.sqlite3-*
 
 # Ignore parcel related cache
-.parcel-cache
+/.parcel-cache
+
+# Ignore node modules
+/node_modules
 
 # Ignore all logfiles and tempfiles.
 /log/*

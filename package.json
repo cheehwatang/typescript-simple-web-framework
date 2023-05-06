@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "json-server": "^0.17.3"
+  },
+  "scripts": {
+    "start": "npx parcel index.html",
+    "server": "json-server -w db.json"
+  }
+}
