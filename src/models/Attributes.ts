@@ -8,6 +8,10 @@ class Attributes<T extends Object> {
   set = (newProp: T): void => {
     Object.assign(this.data, newProp);
   };
+
+  getAll = (): T => {
+    return this.data;
+  };
 }
 
 export { Attributes };
