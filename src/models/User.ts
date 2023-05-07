@@ -1,6 +1,6 @@
 import { Model } from "./Model";
 import { Eventing } from "./Eventing";
-import { Sync } from "./Sync";
+import { ApiSync } from "./ApiSync";
 import { Attributes } from "./Attributes";
 
 interface UserProps {
@@ -15,7 +15,7 @@ class User extends Model<UserProps> {
   constructor(private data: UserProps) {
     super(
       new Attributes<UserProps>(data),
-      new Sync<UserProps>(rootUrl),
+      new ApiSync<UserProps>(rootUrl),
       new Eventing()
     );
   }
