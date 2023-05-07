@@ -19,6 +19,10 @@ class User {
     this.attributes = new Attributes<UserProps>(data);
   }
 
+  get get() {
+    return this.attributes.get;
+  }
+
   get on() {
     return this.events.on;
   }
