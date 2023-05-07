@@ -12,8 +12,8 @@ interface UserProps {
 const rootUrl = "http://localhost:3000/users";
 
 class User extends Model<UserProps> {
-  constructor(private data: UserProps) {
-    super(
+  static build(data: UserProps): User {
+    return new User(
       new Attributes<UserProps>(data),
       new ApiSync<UserProps>(rootUrl),
       new Eventing()
