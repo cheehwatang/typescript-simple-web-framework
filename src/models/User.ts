@@ -23,6 +23,11 @@ class User {
     return this.attributes.get;
   }
 
+  set = (newProp: UserProps): void => {
+    this.attributes.set(newProp);
+    this.events.trigger("change");
+  };
+
   get on() {
     return this.events.on;
   }
