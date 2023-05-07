@@ -18,6 +18,10 @@ class User {
   constructor(private data: UserProps) {
     this.attributes = new Attributes<UserProps>(data);
   }
+
+  get on() {
+    return this.events.on;
+  }
 }
 
 export { User };
