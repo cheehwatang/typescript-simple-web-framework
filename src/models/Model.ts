@@ -60,4 +60,4 @@ class Model<T extends HasId> {
   };
 }
 
-export { Model, ModelAttributes, Sync, Events };
+export { Model, ModelAttributes, Sync, Events, HasId };

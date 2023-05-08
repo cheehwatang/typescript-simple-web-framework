@@ -1,6 +1,7 @@
 import { View } from "../views/View";
+import { User, UserProps } from "../models/User";
 
-class UserForm extends View {
+class UserForm extends View<User, UserProps> {
   template = (): string => {
     return `
     <div>

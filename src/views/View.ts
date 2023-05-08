@@ -1,7 +1,7 @@
-import { User } from "../models/User";
+import { Model, HasId } from "../models/Model";
 
-abstract class View {
-  constructor(public parent: Element, public model: User) {
+abstract class View<T extends Model<K>, K extends HasId> {
+  constructor(public parent: Element, public model: T) {
     this.bindModel();
   }
 
