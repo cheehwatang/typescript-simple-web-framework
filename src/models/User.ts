@@ -21,4 +21,4 @@ class User extends Model<UserProps> {
   }
 }
 
-export { User };
+export { User, UserProps };
