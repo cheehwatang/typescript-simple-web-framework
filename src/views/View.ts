@@ -6,7 +6,10 @@ abstract class View<T extends Model<K>, K extends HasId> {
   }
 
   abstract template(): string;
-  abstract eventsMap(): { [key: string]: () => void };
+
+  eventsMap = (): { [key: string]: () => void } => {
+    return {};
+  };
 
   bindModel = (): void => {
     this.model.on("change", () => {
